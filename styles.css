@@ -1,0 +1,97 @@
+:root{
+    --bg:#fdfcff; --fg:#2b2740; --muted:#6b6880;
+    --card:#ffffff; --border:#ececf3; 
+    --pastel-pink:#fbe1ec; --pastel-blue:#dbeafe;
+    --pastel-mint:#d8f3e3; --pastel-peach:#fde6d0;
+    --pastel-lavender:#e7defb; 
+    --primary:#bcd9f7; 
+    --primary-fg:#1f2c3a;
+    --danger: #3c0364a; 
+    --radius: 12px; 
+    --shadow: 0 12px 32px -16px rgba(120,140,180, .3); 
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0; font-family:system-ui,-apple-system,Segoee UI, Roboto, sans-serif;
+    background:var(--bg);color:var(--fg);line-height:1.5;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+.site-header{
+    position:sticky;top:0;z-index:10;background:rgba(253,252,255,.85);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--border);
+}
+.nav{display:flex; align-items:center; justify-content:space-between;height:64px}
+.brand{font-weight:700; letter-spacing:.2px}
+.nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+.nav a.link{
+    display:inline-block;padding:.5rem .75rem;border-radius:8px;
+    color:var(--muted);font-size:.9rem;font-weight:500;
+}
+.nav a.link:hover,.nav a.link.active{color:var(--fg);background:var(--pastel-blue)}
+
+.btn{
+    display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
+    background:var(--primary);color:var(--primary-fg);
+    padding:.75rem 1.25rem;border:0; border-radius:var(--radius);
+    font-weight:600; font-size:.9rem;box-shadow:var(--shadow); 
+}
+.btn:hover{filter:brightness(.97)}
+.btn.ghost{background:transparent;border:1px solid var(--border);box-shadow:none}
+
+.hero{
+    background:linear-gradient(135deg, var(--pastel-blue), var(--pastel-mint) 60%,var(--pastel-lavender)); 
+    padding:5rem 0;
+}
+.hero h1{font-size:clamp(2rem, 5vw, 3.5rem) ;margin: .5rem 0;line-height:1.1} 
+.hero h1 span{color:#3a5f8a} 
+.hero p{color:var(--muted) ;max-width: 520px}
+.tag{
+    display:inline-block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase; 
+    background:#fff;padding:.35rem .75rem;border-radius: 999px;color:var(--primary-fg);
+}
+
+.section{padding:3rem 0} 
+.grid{display:grid;gap:1rem}
+@media(min-width:640px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--border) ;border-radius:var(--radius);padding:1.25rem}
+.icon-chip{
+    display:inline-grid;place-items:center;width: 40px; height:40px;border-radius:10px; 
+    background:var(--pastel-blue);font-size:1.2rem;
+}
+
+.field{display:block;margin: 1rem}
+.field label{display: block; font-size:.85rem;font-weight: 500; margin-bottom:.35rem}
+.field input,.field select,.field textarea{
+    width:100%; padding:.6rem .75rem;border:1px solid var(--border); 
+    border-radius:8px; background:#fff;font:inherit; 
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+    outline:2px solid var(--primary);outline-offset:1px; 
+}
+.error{color:var(--danger);font-size:.8rem;margin-top:.25rem}
+
+.planner{display:grid;gap:2rem}
+@media(min-width:900px){.planner{grid-template-columns:360px 1fr}}
+.task-list{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}
+.task .meta{flex:1; min-width: 0}
+.task ,title{font-weight:500}
+.task.done .title{text-decoration:line-through;color:var(--muted)}
+.badge{font-size:.7rem; padding:.2rem .55rem;border-radius: 999px; background:var(--pastel-mint)}
+.badge.high{background:var(--pastel-pink)}
+.badge.med{background:var(--pastel-peach)}
+.icon-btn{
+    background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:1rem;}
+.icon-btn:hover{color:var(--danger)}
+
+.faq{display:grid;gap:.5rem} 
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem} 
+.faq summary{cursor:pointer;font-weight:500} 
+
+.site-footer{border-top:1px solid var(--border);margin-top: 4rem; padding: 1.5 rem; color:var(--muted);
+font-size:.85rem;text-align:center}
