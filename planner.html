@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title> Planner - My Study Planner</title>
+        <meta name="description" content="Add, priorities and complete your study tasks."/>
+        <link rel="stylesheet" href="css/styles.css"/>
+    </head>
+    <body>
+        <header class="stie-header">
+            <div class="container nav">
+                <a href="index.html" class="brand"> My Study Planner</a>
+                <nav aria-label="Primary"><ul>
+                    <li><a class="link" href="index.html">Home</a></li>
+                    <li><a class="link active" href="planner.html">Planner</a></li>
+                    <li><a class="link" href="about.html">About</a></li>
+                    <li><a class="link" href="contact.html">Contact</a></li>
+                </ul></nav>
+            </div>
+        </header>
+
+        <main class="container section">
+            <h1>Your Planner</h1>
+            <p style="color:var(--muted)">Capture tasks, set priorities and check them off as you go.</p>
+
+            <div class="planner" style="margin-top:2rem">
+
+                <form id="taskForm" class="card" novalidate>
+                    <h2 style="margin-top:0">Add a task</h2>
+
+                    <div class="field">
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text" required />
+                        <p class="error" id="errTitle" hidden></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="subject">Subject</label>
+                        <input id="subject" name="subject" type="text" placeholder="e.g. ICT204" required/>
+                        <p class="error" id="errSubject" hidden></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="due">Due dates</label>
+                        <input id="due" name="due" type="date" required/>
+                        <p class="error" id="errDue" hidden></p>
+                    </div>
+
+                    <div class="field">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="med" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" type="submit">Add task</button>
+                </form>
+
+                <section>
+                    <div role="tablist" aria-label="Filter tasks" style= "display:flex;gap:.5rem;margin-bottom:1rem"></div>
+                    <button class="btn ghost filter active" data-filter="all">All</button>
+                    <button class="btn ghost filter" data-filter="open">Open</button>
+                    <button class="btn ghost filter" data-filter="done">Done</button>
+                    </div>
+                    <ul id="taskList" class="task-list"></ul>
+                    <p id="emptyMsg" class="card" style="text-align:center;color:var(--muted)">No tasks yet. Add your first one on the left</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">&copy My Study Planner  Plan Smarter. Study calmer.</footer>
+        <script src="js/app.js"></script>
+    </body>
+</html>

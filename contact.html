@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title> Planner - My Study Planner</title>
+        <meta name="description" content="Add, priorities and complete your study tasks."/>
+        <link rel="stylesheet" href="css/styles.css"/>
+    </head>
+    <body>
+        <header class="stie-header">
+            <div class="container nav">
+                <a href="index.html" class="brand"> My Study Planner</a>
+                <nav aria-label="Primary"><ul>
+                    <li><a class="link" href="index.html">Home</a></li>
+                    <li><a class="link" href="planner.html">Planner</a></li>
+                    <li><a class="link" href="about.html">About</a></li>
+                    <li><a class="link active" href="contact.html">Contact</a></li>
+                </ul></nav>
+            </div>
+        </header>
+
+        <main class="container section" style="max-width:760px">
+            <h1>Contact Us</h1>
+            <p style="color:var(--muted)">Questions, feedback or ideas - we'd love to hear from you!</p>
+
+            <h2 style="margin-top:2rem">FAQ</h2>
+            <div class="faq">
+                <details open><summary>Is my data saved anywhere?</summary>
+                <p>Tasks are stored locally in your browser. No accounts, no servers.</p>
+            </details>
+            <details><summary>Can I use this on my phone?</summary>
+                <p>Yes, the layout is mobile-first and adapts to tablet and desktop.</p>
+            </details>
+            <details><summary>Can I export my plan?</summary>
+                <p>Not yet, copy and paste works for now. Export is on the roadmap.</p></details>
+            </div>
+
+            <h2 style="margin-top:2.5rem">Send a message</h2>
+            <form id="contactForm" class="card" novalidate>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" required/>
+                    <p class="error" id="errName" hidden></p>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required/>
+                    <p class="error" id="errEmail" hidden></p>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required></textarea>
+                    <p class="error" id="errMessage" hidden></p>
+                </div>
+                <button class="btn" type="submit">Send message</button>
+                <p id="sentMsg" style="color :#2a7d4f; margin-top:.75rem" hidden>Thanks! Your message has been recorded.</p>
+            </form>
+        </main>
+
+        <footer class="site-footer">&copy My Study Planner  Plan Smarter. Study calmer.</footer>
+        <script src="js/app.js"></script>
+        </body>
+        </html>
